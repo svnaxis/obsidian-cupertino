@@ -1,29 +1,76 @@
 body:is(.mod-macos, .adaptive-mode-off) {
   --side-padding: 20px;
 
-  --p-spacing: 1rem;
-
   --input-shadow: none;
   --input-shadow-hover: none;
 
-  --clickable-icon-radius: 100vh;
-  --button-radius: var(--input-radius);
-  --input-radius: var(--radius-s);
   --input-height: 24px;
+  --input-radius: var(--radius-s);
+  --button-radius: var(--input-radius);
+  --clickable-icon-radius: 100vh;
 
   --interactive-normal: hsl(from var(--mono-100) h s l / 5%);
   --interactive-hover: hsl(from var(--mono-100) h s l / 5%);
-  --background-modifier-border: hsl(from var(--mono-100) h s l / 0.075);
-  --background-modifier-border-hover: var(--background-modifier-border);
-  --background-modifier-border-focus: hsl(from var(--interactive-accent) h s l / 0.5);
 
   --blur-radius-s: 2px;
   --blur-radius-m: 4px;
   --blur-radius-l: 8px;
 
+  --raised-mask: linear-gradient(#ffffffbf, #ffffffbf) padding-box, linear-gradient(white, white) border-box;
+  --raised-mask-border-width: 0px !important;
+  --raised-mask-background: linear-gradient(transparent, white 35%, white 65%, transparent);
+
+  --shadow-extra: 0 0 transparent;
+
+  &.theme-light {
+    --blur-background: hsl(0 0% 95% / 0.5);
+    --raised-background: linear-gradient(
+      to bottom,
+      color-mix(in oklch, var(--blur-background), white 25%),
+      var(--blur-background) 25%,
+      var(--blur-background) 50%,
+      color-mix(in oklch, var(--blur-background), white 25%)
+    );
+
+    --shadow-edges:
+      var(--shadow-extra), 0 0 0 0.5pt hsl(0 0% 0% / 0.075), -1px 0 0 -0.5pt hsl(0 0% 0% / 0.3), 1px 0 0 -0.5pt hsl(0 0% 0% / 0.3),
+      inset 0 1.5pt 1.5pt -1.5pt hsl(0 0% 100% / 0.5), inset 0 -1.5pt 1.5pt -1.5pt hsl(0 0% 100% / 0.5) !important;
+    --shadow-xs: var(--shadow-edges), 0 2px 16px hsl(0 0% 0% / 0.035);
+    --shadow-s: var(--shadow-edges), 0 8px 48px 0 hsl(0 0% 0% / 0.25);
+    --shadow-l: var(--shadow-edges), 0 18px 54px 0 hsl(0 0% 0% / 0.35);
+    --shadow-surface: var(--shadow-edges), 0 4px 24px hsl(0 0% 0% / 0.05);
+  }
+
+  &.theme-dark {
+    --blur-background: hsl(0 0% 20% / 0.5);
+    --raised-background: linear-gradient(
+      to bottom,
+      color-mix(in oklch, var(--blur-background), white 3.5%),
+      var(--blur-background) 25%,
+      var(--blur-background) 75%,
+      color-mix(in oklch, var(--blur-background), white 3.5%)
+    );
+
+    --shadow-edges:
+      var(--shadow-extra), 0 0 0 0.5pt hsl(0 0% 0% / 0.07), -1px 0 0 -0.5pt hsl(0 0% 0% / 0.15), 1px 0 0 -0.5pt hsl(0 0% 0% / 0.15),
+      inset 0px 1.5pt 1.5pt -1.5pt hsl(0 0% 100% / 0.25), inset 0px -1.5pt 1.5pt -1.5pt hsl(0 0% 100% / 0.25) !important;
+    --shadow-xs: var(--shadow-edges);
+    --shadow-s: inset 0 0 0 0.5pt hsl(0 0% 100% / 0.1), var(--shadow-edges), 0 8px 48px 0 hsl(0 0% 0% / 0.45);
+    --shadow-l: inset 0 0 0 0.5pt hsl(0 0% 100% / 0.1), var(--shadow-edges), 0 18px 54px 0 hsl(0 0% 0% / 0.57), 0 0 1px 0 hsl(0 0% 0% / 0.8);
+    --shadow-surface: var(--shadow-edges), inset 0 0 1px 1px hsl(0 0% 100% / 0.05), 0 8px 16px hsl(0 0% 0% / 0.2);
+  }
+
   &:not(.is-mobile) {
     --tab-action-width: 36px;
+
+    &.theme-light {
+      --shadow-extra: inset 0 0 0 0.5pt hsl(0 0% 100% / 0.25);
+    }
+    &.theme-dark {
+      --shadow-extra: inset 0 0 0 0.5pt hsl(0 0% 100% / 0.05);
+    }
   }
+
   &.is-mobile {
     --titlebar-background: transparent;
     --titlebar-background-focused: transparent;
@@ -37,64 +84,9 @@ body:is(.mod-macos, .adaptive-mode-off) {
     --input-height: 48px;
     --input-padding: 0 var(--side-padding);
   }
+
   &.is-phone {
     --nav-item-padding: calc(16px * var(--density-modifier)) var(--side-padding);
-  }
-
-  &.theme-light {
-    --blur-brightness: 1.01;
-
-    --divider-color: color-mix(in srgb, var(--background-secondary), black 7.5%);
-
-    --shadow-base:
-      inset 0 1.5px 1.5px -1px hsl(0 0% 100% / 0.9), inset 0 -1.5px 1.5px -1px hsl(0 0% 100% / 0.9), inset 0 20px 16px -8px hsl(0 0% 100% / 0.5),
-      inset 0 -16px 16px -8px hsl(0 0% 100% / 0.35), inset 0 8px 12px 4px hsl(0 0% 0% / 0.035), inset 0 16px 8px -8px hsl(0 0% 100% / 0.25),
-      inset 0 -16px 8px -8px hsl(0 0% 100% / 0.25);
-    --shadow-edges: 0 0 0 0.5pt hsl(0 0% 0% / 0.05), -1px 0 0 -0.5pt hsl(0 0% 0% / 0.2), 1px 0 0 -0.5pt hsl(0 0% 0% / 0.2) !important;
-
-    --shadow-xs: var(--shadow-edges), var(--shadow-base), 0 1px 2px hsl(0 0% 0% / 0.025);
-    --shadow-s: var(--shadow-edges), var(--shadow-base), 0 8px 48px 0 hsl(0 0% 0% / 0.25);
-    --shadow-l: var(--shadow-edges), 0 18px 54px 0 hsl(0 0% 0% / 0.3);
-    --shadow-surface: var(--shadow-edges), var(--shadow-base), 0 4px 24px hsl(0 0% 0% / 0.05);
-  }
-
-  &.theme-dark {
-    --blur-brightness: 0.5;
-
-    --divider-color: color-mix(in srgb, var(--background-secondary), white 7.5%);
-
-    --shadow-base:
-      inset 0 1px 1px -1px hsl(0 0% 100% / 0.7), inset 0 -1px 1px -1px hsl(0 0% 100% / 0.7), inset 0 16px 16px -8px hsl(0 0% 100% / 0.035),
-      inset 0 -16px 16px -8px hsl(0 0% 100% / 0.035);
-    --shadow-edges: 0 0 0 0.5pt hsl(0 0% 0% / 0.07), -1px 0 0 -0.5pt hsl(0 0% 0% / 0.15), 1px 0 0 -0.5pt hsl(0 0% 0% / 0.15) !important;
-
-    --shadow-xs: var(--shadow-edges), var(--shadow-base);
-    --shadow-s: inset 0 0 0 0.5pt hsl(0 0% 100% / 0.1), var(--shadow-edges), var(--shadow-base), 0 8px 48px 0 hsl(0 0% 0% / 0.45);
-    --shadow-l: inset 0 0 0 0.5pt hsl(0 0% 100% / 0.1), var(--shadow-edges), 0 18px 54px 0 hsl(0 0% 0% / 0.57), 0 0 1px 0 hsl(0 0% 0% / 0.8);
-    --shadow-surface: var(--shadow-edges), var(--shadow-base), inset 0 0 1px 1px hsl(0 0% 100% / 0.05), 0 8px 16px hsl(0 0% 0% / 0.2);
-  }
-
-  &.is-mobile.theme-dark {
-    --settings-background: var(--background-secondary);
-    --setting-items-background: var(--background-secondary-alt);
-
-    --blur-background: hsl(0 0% 100% / 0.1);
-
-    .modal.mod-sidebar-layout {
-      --background-modifier-border: color-mix(in srgb, var(--background-secondary), white 15%);
-    }
-  }
-  &.is-phone.theme-dark {
-    --modal-sidebar-background: var(--background-secondary);
-    --mobile-sidebar-background: var(--background-primary);
-  }
-  &.is-tablet.theme-light {
-    --shadow-surface:
-      inset 1px 1px 2px hsl(0 0% 100% / 0.5), inset -1px -1px 2px hsl(0 0% 100% / 0.5), inset 0 4px 16px hsl(0 0% 100% / 0.025), 0 0 1px hsl(0 0% 0% / 0.25),
-      0 8px 16px 0 hsl(0 0% 0% / 0.05);
-  }
-  &.is-tablet.theme-dark {
-    --shadow-surface: 0 0 1px hsl(0 0% 100% / 0.3), 0 0 1px hsl(0 0% 100% / 0.5);
   }
 
   // Button
@@ -110,13 +102,14 @@ body:is(.mod-macos, .adaptive-mode-off) {
   &:not(.is-mobile) {
     .clickable-icon {
       transition: var(--anim-duration-superfast);
+      padding: 10px;
     }
     .clickable-icon:not([aria-disabled="true"]):hover,
     .clickable-icon.has-active-menu,
     .modal-header-button:hover,
     .search-input-container input {
       box-shadow: var(--shadow-xs);
-      background-color: var(--blur-background);
+      background: var(--raised-background);
     }
   }
 
@@ -151,7 +144,7 @@ body:is(.mod-macos, .adaptive-mode-off) {
         inset 1px 1px 2px -2px hsl(from var(--mono-100) h s l / 1),
         inset -1px -1px 2px -2px hsl(from var(--mono-100) h s l / 1),
         var(--shadow-xs) !important;
-      background-color: var(--blur-background);
+      background: var(--raised-background);
     }
   }
 
@@ -201,7 +194,7 @@ body:is(.mod-macos, .adaptive-mode-off) {
         inset 1px 1px 2px -2px hsl(from var(--mono-100) h s l / 1),
         inset -1px -1px 2px -2px hsl(from var(--mono-100) h s l / 1),
         var(--shadow-xs);
-      background-color: var(--blur-background);
+      background: var(--raised-background);
     }
   }
   &.is-mobile .checkbox-container:active:after {
@@ -263,32 +256,24 @@ body:is(.mod-macos, .adaptive-mode-off) {
       gap: 0px;
       transition: var(--anim-duration-moderate);
       border-radius: var(--clickable-icon-radius);
-      padding: 0;
-      outline: 2px solid transparent;
-      background-clip: content-box;
+      padding: 4px;
       height: auto;
-      z-index: 1;
     }
-
     .workspace-tab-header-container-inner:hover {
-      background-color: var(--background-modifier-hover);
-      outline-color: var(--background-modifier-hover);
-    }
-    .workspace-tab-header-container-inner:hover .workspace-tab-header.is-active {
-      background-color: var(--blur-background);
+      background: var(--raised-background);
       box-shadow: var(--shadow-xs);
 
-      .workspace-tab-header-inner-icon {
-        color: var(--text-normal) !important;
+      .workspace-tab-header.is-active {
+        background: var(--background-modifier-hover);
       }
     }
 
     .workspace-tab-header {
       border-radius: var(--clickable-icon-radius);
-      min-width: 40px;
+      min-width: var(--tab-action-width);
     }
     .workspace-tab-header-inner {
-      padding: 8px;
+      padding: 6px;
     }
     .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner {
       background-color: var(--background-modifier-hover);
@@ -315,14 +300,9 @@ body:is(.mod-macos, .adaptive-mode-off) {
     border-radius: var(--clickable-icon-radius);
     padding: 4px;
     box-shadow: var(--shadow-xs);
-    background-color: var(--blur-background);
+    background: var(--raised-background);
     gap: 0;
 
-    .nav-action-button {
-      position: relative;
-      padding: 6px 9px;
-      border-radius: var(--clickable-icon-radius);
-    }
     .nav-action-button:hover:not([aria-disabled="true"]) {
       background-color: var(--background-modifier-hover);
       box-shadow: none;

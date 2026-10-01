@@ -6,6 +6,7 @@ body {
   --setting-items-border-color: var(--background-modifier-hover);
   --setting-items-radius: var(--radius-m);
   --setting-items-padding-y: calc(16px * var(--density-modifier));
+  --setting-items-divider-width: var(--border-width);
 
   .modal.mod-sidebar-layout {
     .vertical-tab-header-group-container:hover,
@@ -31,6 +32,9 @@ body {
       gap: 4px;
       flex-direction: column;
     }
+    .setting-item-name {
+      overflow: visible;
+    }
     .setting-item-description {
       padding-top: 0;
     }
@@ -45,6 +49,38 @@ body {
 body.mod-macos:not(.is-mobile) .mod-settings {
   --dropdown-background: var(--interactive-normal);
   --dropdown-icon-background: transparent;
+  --dropdown-text-align: start;
+}
+
+// Popout modal (Settings)
+body:not(.is-mobile).is-popout-modal .modal {
+  animation: none !important;
+}
+body.is-frameless:not(.is-mobile).is-popout-modal {
+  --titlebar-height: 40px;
+  --traffic-lights-offset-x: 48px;
+  --traffic-lights-offset-y: 56px;
+
+  padding-top: 0px !important;
+
+  .titlebar {
+    background-color: transparent;
+    border: none;
+    z-index: 1;
+  }
+  .titlebar-text {
+    display: none;
+  }
+  .modal.mod-sidebar-layout {
+    -webkit-app-region: unset;
+  }
+  &.mod-macos .vertical-tab-header {
+    padding-top: var(--titlebar-height);
+  }
+
+  .community-modal-search {
+    margin-left: var(--frame-left-space);
+  }
 }
 
 body:not(.is-phone) {
@@ -55,6 +91,7 @@ body:not(.is-phone) {
       align-items: center;
       font-size: var(--font-ui-small);
       border-radius: var(--radius-s);
+      line-height: normal;
     }
     .vertical-tab-nav-item:hover {
       background-color: var(--background-modifier-hover);
@@ -170,6 +207,7 @@ body:not(.is-phone) {
 body.is-phone {
   .modal.mod-sidebar-layout {
     --modal-header-height: calc(var(--modal-header-inset-top) + var(--touch-size-m) + var(--modal-header-inset-top)) !important;
+    --modal-header-inset-top: 12px;
     box-shadow: none;
 
     .modal-header {

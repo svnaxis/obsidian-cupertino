@@ -3,7 +3,7 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile):not(.is-focused):not(.re
   --workspace-background-translucent: var(--background-secondary);
   --modal-background: var(--background-secondary);
   --menu-background: var(--background-secondary);
-  --blur-background: var(--background-modifier-hover);
+  --raised-background: var(--background-modifier-hover);
   --shadow-xs: none;
   --shadow-s: none;
   --shadow-l: none;
@@ -18,10 +18,6 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile):not(.is-focused):not(.re
 }
 
 // macOS specific
-body:is(.mod-macos, .adaptive-mode-off):not(.is-phone) .modal.mod-settings .vertical-tab-header {
-  background-color: var(--background-secondary);
-}
-
 body:is(.mod-macos, .adaptive-mode-off):not(.is-phone) {
   --tab-outline-color: transparent;
 
@@ -31,5 +27,11 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-phone) {
   .mod-root .workspace-tab-container {
     border-radius: 0;
     box-shadow: 0 calc(-1 * var(--tab-outline-width)) var(--tab-outline-color);
+  }
+
+  .modal.mod-settings .vertical-tab-header {
+    background-color: var(--background-secondary);
+    border-radius: calc(var(--modal-radius) - 1px) 0 0 calc(var(--modal-radius) - 1px);
+    margin: var(--border-width) 0 var(--border-width) var(--border-width);
   }
 }

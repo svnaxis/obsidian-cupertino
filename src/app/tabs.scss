@@ -86,6 +86,11 @@ body:not(.is-phone) .workspace .mod-root {
   }
 }
 
+// Editor panel: Baseline
+body:not(.is-phone) .mod-root .sidebar-toggle-button {
+  padding-inline-end: 0;
+}
+
 // Editor panel: Floating
 body:not(.is-phone) {
   --tab-background-active: var(--background-modifier-hover);
@@ -282,7 +287,7 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-phone) {
       }
 
       &.is-active {
-        background-color: var(--blur-background);
+        background: var(--raised-background);
         box-shadow: var(--shadow-xs);
       }
     }
@@ -347,6 +352,9 @@ body.is-tablet .workspace .mod-root {
   }
   .workspace-tab-header.is-active:hover {
     background-color: inherit;
+  }
+  .workspace-tab-header:not(.is-active):hover {
+    box-shadow: none;
   }
   .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner {
     background-color: inherit;

@@ -1,28 +1,27 @@
 body:is(.mod-macos, .adaptive-mode-off) {
-  --background-modifier-message: var(--modal-background);
-  --modal-background: hsl(from var(--background-primary-alt) h s l / 75%);
-  --menu-background: hsl(from var(--background-primary-alt) h s l / 75%);
+  --background-modifier-message: var(--raised-background);
+  --modal-background: var(--raised-background) !important;
+  --menu-background: var(--raised-background);
 
   &.is-translucent {
-    --modal-background: var(--background-primary);
+    --modal-background: var(--background-primary) !important;
     --menu-background: var(--background-primary);
   }
 
   .prompt,
   .modal:not(.mod-sidebar-layout) {
     backdrop-filter: var(--blur-l);
-    background-color: var(--modal-background);
+    background: var(--modal-background);
   }
   .menu,
   .suggestion-container,
   .popover {
     backdrop-filter: var(--blur-m);
-    background-color: var(--menu-background);
+    background: var(--menu-background);
   }
   .cm-tooltip,
   .notice {
     backdrop-filter: var(--blur-s);
-    background-color: var(--blur-background);
   }
 }
 
@@ -42,6 +41,7 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) {
     }
     .suggestion-item {
       min-height: 32px;
+      justify-content: space-between;
     }
     .menu-separator {
       margin: 6px 8px;
@@ -106,7 +106,7 @@ body:is(.mod-macos, .adaptive-mode-off).is-phone {
       position: absolute;
       right: var(--side-padding);
       left: 56px;
-      background-color: var(--background-modifier-border);
+      background-color: var(--background-modifier-hover);
       width: auto;
       height: var(--border-width);
       content: "";
@@ -224,13 +224,10 @@ body:is(.mod-macos, .adaptive-mode-off) {
 
   .tooltip {
     --background-modifier-message: var(--background-primary);
+    --tooltip-background: var(--background-primary);
+    --tooltip-shadow: none;
+    --tooltip-color: var(--text-muted);
     filter: drop-shadow(0 0 16px var(--background-modifier-box-shadow));
-    animation: none;
-    box-shadow: none;
-    border-radius: var(--radius-l);
-    padding: 8px 16px;
-    color: var(--text-muted);
-    font-weight: var(--font-normal);
   }
 }
 

@@ -36,11 +36,6 @@ body {
     margin: 4px 8px;
     border-color: var(--background-modifier-hover);
   }
-  .suggestion-hotkey {
-    background-color: transparent;
-    border: none;
-    padding: 0 !important;
-  }
 }
 
 body:not(.is-phone) {
@@ -197,7 +192,11 @@ body.is-phone {
   }
 }
 
-// Notice
+// Notice & Tooltop
+body {
+  --tooltip-radius: var(--radius-m);
+  --tooltip-shadow: var(--shadow-xs);
+}
 .notice-container {
   display: flex;
   flex-direction: column;

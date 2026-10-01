@@ -13,22 +13,25 @@ body,
   --icon-size-modifier: 0px;
   --icon-opacity: 1;
 
+  --density-modifier: 1;
+
   --titlebar-background: transparent;
   --titlebar-background-focused: transparent;
 
+  --translucent-light-opacity: 50%;
+  --translucent-dark-opacity: 50%;
+
+  --blur-brightness: 1;
+  --blur-saturation: 1.5;
+  --blur-radius-s: 8px;
+  --blur-radius-m: 12px;
+  --blur-radius-l: 16px;
+
+  --corner-shape: superellipse(1.1);
   --border-width: 1px;
   --border-width-offset: calc(-1 * var(--border-width));
   --divider-width: var(--border-width);
-
-  --raised-mask: radial-gradient(200% 100%, white, transparent) padding-box, linear-gradient(white, white) border-box;
-  --raised-mask-border-width: 0px !important;
-  --raised-mask-background: transparent;
-
   --divider-color-hover: var(--color-base-50);
-
-  --corner-shape: superellipse(1.1);
-
-  --shadow-surface: 0 0 0 1px var(--background-modifier-hover);
 
   --anim-speed-modifier: 1;
   --anim-motion-baseline: cubic-bezier(0.32, 0.72, 0, 1);
@@ -44,10 +47,6 @@ body,
   --icon-l-stroke-width: calc(2px * var(--icon-stroke-modifier));
   --icon-xl-stroke-width: calc(1.25px * var(--icon-stroke-modifier));
 
-  --density-modifier: 1;
-  --translucent-light-opacity: 50%;
-  --translucent-dark-opacity: 50%;
-
   --color-red: rgb(var(--color-red-rgb));
   --color-orange: rgb(var(--color-orange-rgb));
   --color-yellow: rgb(var(--color-yellow-rgb));
@@ -57,10 +56,11 @@ body,
   --color-purple: rgb(var(--color-purple-rgb));
   --color-pink: rgb(var(--color-pink-rgb));
 
-  --background-modifier-cover: hsl(0 0% 0% / 0.35);
+  --shadow-surface: 0 0 0 var(--border-width) var(--background-modifier-hover);
+
   --background-modifier-hover: hsl(from var(--mono-100) h s l / 0.05) !important;
-  --interactive-normal: color-mix(in srgb, var(--background-primary), white 5%);
-  --interactive-hover: color-mix(in srgb, var(--interactive-normal), black 5%);
+  --interactive-normal: color-mix(in srgb, var(--background-primary), white 7%);
+  --interactive-hover: color-mix(in srgb, var(--interactive-normal), var(--background-secondary) 50%);
 }
 
 .theme-light {
@@ -95,12 +95,24 @@ body,
   --code-tag: #116329;
   --code-value: #098658;
 
+  --color-base-00: #fdfdfd;
+  --color-base-05: #fcfcfc;
+  --color-base-10: #f8f8f8;
+  --color-base-20: #f5f5f5;
+  --color-base-25: #f2f2f2;
+  --color-base-30: #ebebeb;
+  --color-base-35: #e4e4e4;
+  --color-base-40: #d7d7d7;
+  --color-base-50: #b1b1b1;
+  --color-base-60: #8c8c8c;
+  --color-base-70: #747474;
+  --color-base-100: #3d3d3d;
+
   --background-modifier-form-field: var(--background-primary);
-  --blur-background: hsl(0 0% 100% / 0.5);
 
   --shadow-tactile: inset 0px 1px hsl(0 0 100 / 0.5), 0px 2px 2px -2px hsl(0 0 0 / 0.05), 0px 4px 8px -4px hsl(0 0 0 / 0.05);
 
-  --shadow-s: 0 0 0 var(--border-width) hsl(0 0% 0% / 0.05), 0 8px 24px hsl(0 0% 0% / 0.05), 0 8px 8px hsl(0 0% 0% / 0.05), 0 2px 4px hsl(0 0% 0% / 0.05);
+  --shadow-s: 0 0 0 var(--border-width) hsl(0 0% 0% / 0.05), 0 2px 2px hsl(0 0% 0% / 0.05), 0 4px 8px hsl(0 0% 0% / 0.025);
   --shadow-l:
     0 0 0 var(--border-width) hsl(0 0% 0% / 0.05), 0 1px 2px -1px hsl(0 0% 0% / 0.05), 0 2px 4px hsl(0 0% 0% / 0.05), 0px 12px 24px -16px hsl(0 0% 15% / 0.15);
 }
@@ -136,8 +148,20 @@ body,
   --code-tag: #7ee787;
   --code-value: #b5cea8;
 
+  --color-base-00: #161616;
+  --color-base-05: #171717;
+  --color-base-10: #181818;
+  --color-base-20: #1c1c1c;
+  --color-base-25: #222222;
+  --color-base-30: #292929;
+  --color-base-35: #303030;
+  --color-base-40: #383838;
+  --color-base-50: #555555;
+  --color-base-60: #6e6e6e;
+  --color-base-70: #898989;
+  --color-base-100: #c1c1c1;
+
   --background-modifier-form-field: var(--background-secondary);
-  --blur-background: hsl(0 0% 100% / 0.025);
 
   --shadow-tactile:
     inset 0px 2px 1px -1px hsl(0 0 100 / 0.05), inset 0px -4px 2px -2px hsl(0 0 0 / 0.1), 0px 2px 2px -2px hsl(0 0 0 / 0.1), 0px 4px 8px -4px hsl(0 0 0 / 0.1);
@@ -157,11 +181,11 @@ body:not(.is-mobile) {
   .app-container {
     transition: var(--anim-duration-moderate);
     align-items: center;
+    background: var(--background-secondary);
   }
 
-  &:not(.is-translucent) .workspace,
   .workspace-fake-target-overlay {
-    background: var(--background-secondary);
+    background: transparent;
   }
 
   .workspace-split {

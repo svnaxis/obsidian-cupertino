@@ -230,7 +230,7 @@ body.is-android:not(.adaptive-mode-off):not(.is-phone) {
     border-radius: var(--radius-l);
 
     .prompt-input-container {
-      margin: 16px 16px 0;
+      margin: 8px 8px 0;
     }
     .prompt-input {
       border: none;
@@ -240,11 +240,12 @@ body.is-android:not(.adaptive-mode-off):not(.is-phone) {
     }
 
     .prompt-results {
-      padding: 16px;
+      padding: 8px;
     }
 
     .suggestion-item {
       border-radius: 100vh;
+      padding: 12px;
     }
   }
 }

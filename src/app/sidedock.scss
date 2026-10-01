@@ -8,13 +8,11 @@ body {
   --ribbon-background: transparent;
   --ribbon-background-collapsed: var(--ribbon-background);
 
-  --divider-vertical-height: 100% !important;
-
   --vault-profile-radius: var(--radius-s) !important;
 }
 
 body.is-mobile {
-  --nav-item-padding: calc(10px * var(--density-modifier)) 24px;
+  --nav-item-padding: calc(12px * var(--density-modifier)) 24px;
   --nav-item-color: var(--text-muted);
   --nav-item-size: var(--font-ui-small);
   --nav-item-weight-active: var(--font-medium);
@@ -173,7 +171,7 @@ body:not(.is-mobile) .mod-sidedock .view-content .nav-header {
 body:not(.nav-action-center) .mod-sidedock .nav-header:first-child:not(:hover) .nav-buttons-container {
   gap: 4px !important;
   padding: 0 !important;
-  background-color: transparent !important;
+  background: transparent !important;
   box-shadow: none !important;
 
   .nav-action-button {

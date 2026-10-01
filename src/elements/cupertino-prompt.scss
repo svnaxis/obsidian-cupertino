@@ -22,40 +22,14 @@ body:is(.mod-macos, .adaptive-mode-off) {
     border-bottom: none;
     padding-inline-start: calc(var(--search-icon-size) + var(--side-padding) + 12px) !important;
   }
-
-  .prompt .suggestion-item {
-    border-radius: var(--radius-m);
-    padding: calc(12px * var(--density-modifier)) var(--side-padding);
-  }
-
-  .prompt-instructions {
-    border-top: none;
-  }
 }
 body:is(.mod-macos, .adaptive-mode-off):not(.is-phone) {
-  --prompt-input-height: 56px;
-
-  @keyframes bounceInScale {
-    from {
-      transform: scale(1.15);
-      opacity: 0;
-    }
-    50% {
-      transform: scale(0.99);
-    }
-  }
-
-  .prompt {
-    animation: var(--anim-duration-moderate) bounceInScale var(--anim-motion-baseline) forwards;
-    border-radius: var(--radius-xl);
-  }
-
   .prompt-input-container::after {
     content: "";
     position: absolute;
     inset: auto var(--side-padding) 0;
     height: var(--border-width);
-    background-color: var(--background-modifier-border);
+    background-color: var(--background-modifier-hover);
     pointer-events: none;
   }
 }
@@ -120,7 +94,6 @@ body:is(.mod-macos, .adaptive-mode-off).is-phone {
 
   // Animation override: Prompt In
   .prompt {
-    transition: var(--anim-duration-moderate) !important;
     transform: none !important;
     overflow: visible;
     box-shadow: none;
@@ -142,8 +115,4 @@ body:is(.mod-macos, .adaptive-mode-off).is-phone {
   .prompt[style*="transform: translateY"] {
     opacity: 0;
   }
-}
-
-body:is(.mod-macos, .adaptive-mode-off).is-tablet .prompt {
-  border-radius: var(--radius-l);
 }
