@@ -143,15 +143,6 @@ body {
 }
 
 body:not(.is-mobile) {
-  @keyframes modalIn {
-    from {
-      transform: scale(0.99);
-    }
-  }
-
-  .modal {
-    animation: modalIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
-  }
   .modal-header-button {
     inset-block-start: 12px;
     inset-inline-end: 12px;
