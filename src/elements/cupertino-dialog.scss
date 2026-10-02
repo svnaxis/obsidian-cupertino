@@ -4,6 +4,7 @@ body:is(.mod-macos, .adaptive-mode-off) {
   --menu-background: var(--raised-background);
 
   &.is-translucent {
+    --background-modifier-message: var(--background-primary);
     --modal-background: var(--background-primary) !important;
     --menu-background: var(--background-primary);
   }
@@ -29,12 +30,6 @@ body:is(.mod-macos, .adaptive-mode-off) {
 body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) {
   .menu,
   .suggestion-container {
-    animation: none;
-
-    svg.svg-icon {
-      transition: none;
-    }
-
     .menu-item,
     .suggestion-item {
       padding: calc(4px * var(--density-modifier)) 12px;
@@ -151,7 +146,7 @@ body:is(.mod-macos, .adaptive-mode-off).is-tablet {
 
 // Modal
 body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) {
-  @keyframes modalInCupertino {
+  @keyframes floatInCupertino {
     from {
       opacity: 1;
       filter: none;
@@ -159,7 +154,7 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-mobile) {
     }
   }
   .modal {
-    animation: modalInCupertino var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
+    animation: floatInCupertino var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
   }
 
   .modal:not(.mod-sidebar-layout) {

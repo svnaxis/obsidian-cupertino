@@ -31,7 +31,5 @@ body:is(.mod-macos, .adaptive-mode-off):not(.is-phone) {
 
   .modal.mod-settings .vertical-tab-header {
     background-color: var(--background-secondary);
-    border-radius: calc(var(--modal-radius) - 1px) 0 0 calc(var(--modal-radius) - 1px);
-    margin: var(--border-width) 0 var(--border-width) var(--border-width);
   }
 }

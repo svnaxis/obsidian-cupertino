@@ -234,8 +234,6 @@ body.mod-linux:not(.is-android):not(.adaptive-mode-off):not(.is-mobile) {
 
   .menu,
   .suggestion-container {
-    animation: none;
-
     .menu-item,
     .suggestion-item {
       padding: calc(8px * var(--density-modifier)) 12px;

@@ -204,7 +204,7 @@ body.mod-windows:not(.adaptive-mode-off) {
 
 body.mod-windows:not(.adaptive-mode-off):not(.is-mobile) {
   // Side panels
-  @keyframes workspaceLeafInFluent {
+  @keyframes floatInFluent {
     from {
       transform: translateY(16px);
       opacity: 0;
@@ -212,7 +212,7 @@ body.mod-windows:not(.adaptive-mode-off):not(.is-mobile) {
   }
 
   .mod-sidedock .workspace-leaf {
-    animation: workspaceLeafInFluent var(--anim-duration-moderate);
+    animation: floatInFluent var(--anim-duration-fast);
   }
 
   // Panel actions
@@ -248,7 +248,6 @@ body.mod-windows:not(.adaptive-mode-off):not(.is-mobile) {
   // Menu
   .menu,
   .suggestion-container {
-    animation: none;
     border-radius: var(--radius-xl);
     border: var(--border-width) solid var(--background-modifier-border);
 
@@ -270,8 +269,6 @@ body.mod-windows:not(.adaptive-mode-off):not(.is-mobile) {
 
   // Prompt
   .prompt {
-    animation: none;
-
     .prompt-results {
       position: relative;
     }

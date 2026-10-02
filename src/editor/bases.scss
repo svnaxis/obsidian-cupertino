@@ -1,6 +1,7 @@
 body {
   --bases-header-border-width: 0;
   --bases-table-header-color: var(--text-faint);
+  --bases-table-group-background: none;
 }
 
 .bases-view {
@@ -32,6 +33,10 @@ body {
 }
 .bases-table-header-resizer {
   border-radius: var(--radius-s);
+}
+
+.bases-tbody {
+  background-color: var(--background-primary-alt);
 }
 
 .bases-table-cell > * {
@@ -81,7 +86,6 @@ body {
 .query-toolbar-menu,
 .bases-toolbar-menu,
 .cm-tooltip {
-  animation: none !important;
   min-width: unset;
 }
 

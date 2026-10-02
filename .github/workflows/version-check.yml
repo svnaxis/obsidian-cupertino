@@ -57,11 +57,11 @@ jobs:
 
             const reportedObsidian  = extractField("Obsidian version");
             const reportedInstaller = extractField("Obsidian installer version");
-            const reportedBaseline  = extractField("Baseline version");
+            const reportedCupertino  = extractField("Cupertino version");
 
             // None of the three fields were found at all — this issue probably
             // wasn't filed through the bug report form. Bail out quietly.
-            if (!reportedObsidian && !reportedInstaller && !reportedBaseline) {
+            if (!reportedObsidian && !reportedInstaller && !reportedCupertino) {
               console.log("No version fields found in issue body; skipping version check.");
               return;
             }
@@ -74,11 +74,11 @@ jobs:
             });
             const latestObsidian = installerRelease.data.tag_name.replace(/^v/i, "");
 
-            const baselineRelease = await github.rest.repos.getLatestRelease({
-              owner: "aaaaalexis",
-              repo: "obsidian-baseline",
+            const cupertinoRelease = await github.rest.repos.getLatestRelease({
+              owner: "svnaxis",
+              repo: "obsidian-cupertino",
             });
-            const latestBaseline = baselineRelease.data.tag_name.replace(/^v/i, "");
+            const latestCupertino = cupertinoRelease.data.tag_name.replace(/^v/i, "");
 
             // Each field carries its own "how to fix" instruction, since Obsidian's
             // app version, installer version, and a theme's version all update
@@ -99,9 +99,9 @@ jobs:
                 howTo: "Download the latest installer from [GitHub release](https://github.com/obsidianmd/obsidian-releases/releases/latest) or [obsidian.md/download](https://obsidian.md/download) and run it. You do not need to uninstall Obsidian first.",
               },
               {
-                name: "Baseline",
-                reported: reportedBaseline,
-                latest: latestBaseline,
+                name: "Cupertino",
+                reported: reportedCupertino,
+                latest: latestCupertino,
                 checkInsider: false,
                 howTo: "Open Settings → Appearance and check for theme updates.",
               },
