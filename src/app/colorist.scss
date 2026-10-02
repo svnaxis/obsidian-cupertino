@@ -1,4 +1,4 @@
-.css-settings-manager {
+body {
   --colorist-l-light: 1;
   --colorist-c-light: 0;
   --colorist-h-light: calc(var(--accent-h) + 25);
@@ -94,6 +94,61 @@
       --color-accent-2: oklch(0.95 max(0.15, calc(var(--colorist-c-dark) * 0.1)) var(--colorist-h-dark));
     }
   }
+}
+
+.theme-light {
+  --colorist-l-00: 0.995;
+  --colorist-l-05: 0.99;
+  --colorist-l-10: 0.98;
+  --colorist-l-20: 0.97;
+  --colorist-l-25: 0.96;
+  --colorist-l-30: 0.94;
+  --colorist-l-35: 0.92;
+  --colorist-l-40: 0.88;
+  --colorist-l-50: 0.76;
+  --colorist-l-60: 0.64;
+  --colorist-l-70: 0.56;
+  --colorist-l-100: 0.36;
+
+  --colorist-c-00: 0.025;
+  --colorist-c-05: 0.025;
+  --colorist-c-10: 0.025;
+  --colorist-c-20: 0.03;
+  --colorist-c-25: 0.03;
+  --colorist-c-30: 0.04;
+  --colorist-c-35: 0.04;
+  --colorist-c-40: 0.04;
+  --colorist-c-50: 0.03;
+  --colorist-c-60: 0.025;
+  --colorist-c-70: 0.025;
+  --colorist-c-100: 0.025;
+}
+.theme-dark {
+  --colorist-l-00: 0.2;
+  --colorist-l-05: 0.205;
+  --colorist-l-10: 0.21;
+  --colorist-l-20: 0.225;
+  --colorist-l-25: 0.25;
+  --colorist-l-30: 0.28;
+  --colorist-l-35: 0.31;
+  --colorist-l-40: 0.34;
+  --colorist-l-50: 0.45;
+  --colorist-l-60: 0.54;
+  --colorist-l-70: 0.63;
+  --colorist-l-100: 0.81;
+
+  --colorist-c-00: 0.015;
+  --colorist-c-05: 0.015;
+  --colorist-c-10: 0.0175;
+  --colorist-c-20: 0.02;
+  --colorist-c-25: 0.0225;
+  --colorist-c-30: 0.025;
+  --colorist-c-35: 0.03;
+  --colorist-c-40: 0.035;
+  --colorist-c-50: 0.03;
+  --colorist-c-60: 0.025;
+  --colorist-c-70: 0.0225;
+  --colorist-c-100: 0.02;
 }
 
 // Cupertino
