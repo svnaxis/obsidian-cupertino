@@ -6,9 +6,9 @@
 
 _Best Theme of [Obsidian Gems of the Year 2024](https://obsidian.md/blog/2024-goty-winners/)_
 
-[![](https://img.shields.io/badge/Made%20in-Taiwan-blue?style=for-the-badge)](https://wikipedia.org/wiki/Taiwan)
-[![](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Donate-green?style=for-the-badge&logo=buymeacoffee)](https://www.buymeacoffee.com/sevenaxis)
-[![](https://img.shields.io/badge/Obsidian-Install-purple?style=for-the-badge&logo=obsidian)](https://aaaaalexis.github.io/obsidian-baseline/install?name=Cupertino)
+<a href="https://community.obsidian.md/themes/cupertino"><picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/badge/Add%20to%20Obsidian.svg?size=default&amp;theme=violet&amp;mode=dark&amp;logo=obsidian"><img alt="badge" src="https://shieldcn.dev/badge/Add%20to%20Obsidian.svg?size=default&amp;theme=violet&amp;mode=light&amp;logo=obsidian"></picture></a>
+<a href="https://buymeacoffee.com/svnaxis"><picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/badge/Buy%20me%20a%20coffee.svg?size=default&amp;theme=amber&amp;mode=dark&amp;logo=buymeacoffee"><img alt="badge" src="https://shieldcn.dev/badge/Buy%20me%20a%20coffee.svg?size=default&amp;theme=amber&amp;mode=light&amp;logo=buymeacoffee"></picture></a>
+<a href="https://wikipedia.org/wiki/Taiwan"><picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/badge/Made%20in-Taiwan.svg?variant=secondary&amp;size=default&amp;mode=dark&amp;logo=ri%3AFaHeart&amp;labelGap=3"><img alt="badge" src="https://shieldcn.dev/badge/Made%20in-Taiwan.svg?variant=secondary&amp;size=default&amp;mode=light&amp;logo=ri%3AFaHeart&amp;labelGap=3"></picture></a>
 
 </div>
 
@@ -16,17 +16,13 @@ _Best Theme of [Obsidian Gems of the Year 2024](https://obsidian.md/blog/2024-go
 
 ### Fresh. Familiar. Focused.
 
-**A modern design that feels at home.** Clean typography, refined spacing, and native-inspired components make Cupertino feel like it belongs on your device.
+**Feels right at home.** Clean typography, refined spacing, and native-inspired components make Cupertino feel like it belongs on any device.
 
-![](img/desktop.png)
+![](img/adaptive.png)
 
 **Built for mobile.** Everything is redesigned for touch. One-hand reachability, comfortable spacing, and intuitive layout make your vault feel right in your pocket.
 
 ![](img/mobile.png)
-
-**Native everywhere.** Cupertino adapts to every platform, delivering a consistent and polished look whether you're on desktop or mobile.
-
-![](img/adaptive.png)
 
 ## Philosophy
 
@@ -50,17 +46,17 @@ Cupertino exists because great tools should just work. No rabbit holes. No endle
 
 Cupertino works beautifully on its own. These plugins let you fine-tune the experience if you'd like.
 
-### [Style Settings](https://github.com/mgmeyers/obsidian-style-settings)
+### [Style Settings](https://community.obsidian.md/plugins/obsidian-style-settings)
 
 Enable focus view, hover sidebars. Or disable active line highlight, centered tabs, and compact status bar, and more.
 
-### [Pseudo Mica](https://github.com/aaaaalexis/obsidian-pseudo-mica)
+### [Pseudo Mica](https://community.obsidian.md/plugins/pseudo-mica)
 
 Bring translucent window effects to Windows and macOS for an even more native feel.
 
 ## Features
 
-Cupertino supports most filter and helper classes from [Minimal](https://github.com/kepano/obsidian-minimal).
+Cupertino supports all filter and helper classes from [Minimal](https://github.com/kepano/obsidian-minimal).
 
 ### Banner
 
@@ -150,7 +146,7 @@ Add at the end of the image link, e.g. `![[image.jpeg#invert]]`
 
 ### [Alternate checkboxes](https://github.com/damiankorcz/Alternative-Checkboxes-Reference-Set)
 
-![Preview of alternate checkboxes.](img/checkbox.png)
+![](img/checkbox.png)
 
 | Syntax  | Description |
 | ------- | ----------- |
@@ -187,7 +183,6 @@ Add at the end of the image link, e.g. `![[image.jpeg#invert]]`
 
 ## Credits
 
-- [**Craft Docs**](https://www.craft.do/) - Interface design inspiration
 - [**Yushan Main East Peak** by Huang Chung Yu](https://commons.wikimedia.org/wiki/File:Yushan_main_east_peak%2BHuang_Chung_Yu%E9%BB%83%E4%B8%AD%E4%BD%91%2B9030.png) - Yushan background
 - [**Minimal** by kepano](https://github.com/kepano/obsidian-minimal) ([Donate](https://www.buymeacoffee.com/kepano)) - Dataview cards, image filters, table helper classes
 
