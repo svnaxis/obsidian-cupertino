@@ -2478,6 +2478,11 @@ body:not(.is-mobile) .backlink-pane .search-result-file-match-replace-button {
   border-top: none;
 }
 
+.graph-controls {
+  background: var(--menu-background);
+  backdrop-filter: var(--blur-m);
+}
+
 .canvas-card-menu {
   gap: 4px;
   backdrop-filter: var(--blur-m);

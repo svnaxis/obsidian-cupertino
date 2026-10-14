@@ -35,6 +35,11 @@ body:not(.is-mobile) .backlink-pane {
   }
 }
 
+.graph-controls {
+  background: var(--menu-background);
+  backdrop-filter: var(--blur-m);
+}
+
 // Canvas
 .canvas-card-menu {
   gap: 4px;
