@@ -4,7 +4,7 @@ body {
 }
 
 body:not(.block-width-off) {
-  --line-width-wide: 50rem;
+  --line-width-wide: 50em;
 
   .wide {
     --file-line-width: min(100cqw, var(--line-width-wide));
@@ -17,7 +17,7 @@ body:not(.block-width-off) {
   --block-width-max: calc(100cqw - (var(--file-margins-x) * 2));
   --block-width-offset: calc(-1 * var(--file-margins-x));
 
-  .mod-root .workspace-tab-container {
+  .mod-root .view-content {
     container-type: inline-size;
   }
 
@@ -72,8 +72,8 @@ body:not(.block-width-off) {
 
   // Bases
   div:is(.bases-wide, .bases-max, .bases-100) {
-    .markdown-preview-sizer > .el-pre .bases-embed,
-    .markdown-preview-sizer > .el-p .bases-embed,
+    .markdown-preview-sizer > .el-pre > .bases-embed,
+    .markdown-preview-sizer > .el-p > p > .bases-embed,
     .cm-content > .bases-embed,
     .cm-content > .cm-lang-base {
       max-width: var(--bases-line-max-width) !important;
@@ -98,9 +98,10 @@ body:not(.block-width-off) {
 
   // Image
   div:is(.img-wide, .img-max, .img-100) {
-    .markdown-preview-sizer > .el-p p:has(img),
-    .markdown-preview-sizer > .el-iframe,
+    .markdown-preview-sizer .image-embed:not([width]),
+    .markdown-preview-sizer p > img:not([width], .link-favicon, .emoji, .highlight-swatch, [alt="banner"]),
     .cm-content .image-embed {
+      display: block;
       max-width: var(--img-line-max-width) !important;
       width: var(--img-line-width) !important;
       justify-self: center;

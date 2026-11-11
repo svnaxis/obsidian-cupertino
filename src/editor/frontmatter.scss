@@ -77,7 +77,7 @@
     display: none;
   }
 
-  .markdown-reading-view .metadata-container:not(:hover) .text-icon-button {
+  .markdown-rendered .metadata-container:not(:hover) .text-icon-button {
     opacity: 0;
     height: 0;
     padding-block: 0px;

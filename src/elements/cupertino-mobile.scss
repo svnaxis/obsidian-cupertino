@@ -172,10 +172,12 @@ body:is(.mod-macos, .adaptive-mode-off).is-phone {
       color: var(--text-accent);
     }
 
-    .tree-item:has(> .tree-item-self.is-active) {
-      &::before,
-      + .tree-item::before {
-        content: none !important;
+    @media (pointer: coarse) {
+      .tree-item:has(> .tree-item-self.is-active) {
+        &::before,
+        + .tree-item::before {
+          content: none !important;
+        }
       }
     }
 

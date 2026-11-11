@@ -177,7 +177,7 @@ body:not(.banner-off) {
     // Banner title
     @keyframes bannerTitleEditIn {
       from {
-        transform: translateY(-0.5rem);
+        transform: translateY(-0.5em);
         opacity: 0;
       }
       to {
@@ -187,7 +187,7 @@ body:not(.banner-off) {
     }
     @keyframes bannerTitleEditOut {
       from {
-        transform: translateY(0.5rem);
+        transform: translateY(0.5em);
         opacity: 0;
       }
       to {

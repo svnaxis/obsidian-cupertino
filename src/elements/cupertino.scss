@@ -12,10 +12,6 @@ body:is(.mod-macos, .adaptive-mode-off) {
   --interactive-normal: hsl(from var(--mono-100) h s l / 5%);
   --interactive-hover: hsl(from var(--mono-100) h s l / 5%);
 
-  --blur-radius-s: 2px;
-  --blur-radius-m: 4px;
-  --blur-radius-l: 8px;
-
   --raised-mask: linear-gradient(#ffffffbf, #ffffffbf) padding-box, linear-gradient(white, white) border-box;
   --raised-mask-border-width: 0px !important;
   --raised-mask-background: linear-gradient(transparent, white 35%, white 65%, transparent);
@@ -63,6 +59,10 @@ body:is(.mod-macos, .adaptive-mode-off) {
   &:not(.is-mobile) {
     --tab-action-width: 36px;
 
+    --blur-radius-s: 6px;
+    --blur-radius-m: 10px;
+    --blur-radius-l: 14px;
+
     &.theme-light {
       --shadow-extra: inset 0 0 0 0.5pt hsl(0 0% 100% / 0.25);
     }
@@ -74,6 +74,10 @@ body:is(.mod-macos, .adaptive-mode-off) {
   &.is-mobile {
     --titlebar-background: transparent;
     --titlebar-background-focused: transparent;
+
+    --blur-radius-s: 2px;
+    --blur-radius-m: 4px;
+    --blur-radius-l: 8px;
 
     --radius-s: calc(16px * var(--radius-modifier));
     --radius-m: calc(24px * var(--radius-modifier));
@@ -283,7 +287,7 @@ body:is(.mod-macos, .adaptive-mode-off) {
   .markdown-preview-view {
     transition: transform var(--anim-duration-slow) var(--anim-motion-baseline);
   }
-  .workspace-leaf-content[data-mode="source"] > .view-content > .markdown-reading-view > .markdown-preview-view,
+  .workspace-leaf-content[data-mode="source"] > .view-content > .markdown-rendered,
   .workspace-leaf-content[data-mode="preview"] > .view-content > .markdown-source-view {
     transform: scale(0.99);
     opacity: 0;
@@ -293,10 +297,20 @@ body:is(.mod-macos, .adaptive-mode-off) {
     gap: calc(8px * var(--density-modifier));
   }
 
-  // Status bar
-  &:not(.status-bar-baseline) .status-bar:hover {
+  // Graph view
+  .graph-controls {
+    top: 8px;
+    inset-inline-end: 8px;
+    padding: 0;
     backdrop-filter: var(--blur-m);
     background: var(--raised-background);
     box-shadow: var(--raised-shadow);
+
+    &.is-close {
+      border-radius: var(--clickable-icon-radius);
+    }
+  }
+  .graph-controls-button {
+    margin-top: 0;
   }
 }

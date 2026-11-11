@@ -59,12 +59,6 @@ body.is-phone {
     border-radius: var(--radius-l) var(--radius-l) 0 0;
     overflow: hidden;
 
-    .menu-grabber {
-      margin: 8px auto;
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-    }
     .menu-scroll {
       max-height: 80vh;
     }

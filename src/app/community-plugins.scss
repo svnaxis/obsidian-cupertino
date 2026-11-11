@@ -264,3 +264,8 @@ body.minimal-theme .workspace::before {
     white-space: nowrap;
   }
 }
+
+// Admonition https://github.com/ebullient/obsidian-admonition
+.callout.is-collapsible.is-collapsed .callout-content {
+  display: none;
+}
