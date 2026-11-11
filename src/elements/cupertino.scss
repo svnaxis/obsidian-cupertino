@@ -59,9 +59,9 @@ body:is(.mod-macos, .adaptive-mode-off) {
   &:not(.is-mobile) {
     --tab-action-width: 36px;
 
-    --blur-radius-s: 6px;
-    --blur-radius-m: 10px;
-    --blur-radius-l: 14px;
+    --blur-radius-s: calc(6px * var(--blur-modifier));
+    --blur-radius-m: calc(10px * var(--blur-modifier));
+    --blur-radius-l: calc(14px * var(--blur-modifier));
 
     &.theme-light {
       --shadow-extra: inset 0 0 0 0.5pt hsl(0 0% 100% / 0.25);
@@ -75,9 +75,9 @@ body:is(.mod-macos, .adaptive-mode-off) {
     --titlebar-background: transparent;
     --titlebar-background-focused: transparent;
 
-    --blur-radius-s: 2px;
-    --blur-radius-m: 4px;
-    --blur-radius-l: 8px;
+    --blur-radius-s: calc(2px * var(--blur-modifier));
+    --blur-radius-m: calc(4px * var(--blur-modifier));
+    --blur-radius-l: calc(8px * var(--blur-modifier));
 
     --radius-s: calc(16px * var(--radius-modifier));
     --radius-m: calc(24px * var(--radius-modifier));
