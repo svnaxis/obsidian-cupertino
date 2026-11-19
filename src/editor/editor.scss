@@ -316,7 +316,7 @@
   }
 
   body:not(.media-width-fit) .markdown-preview-sizer,
-  body:not(.media-width-fit) .cm-content {
+  body:not(.media-width-fit) .cm-editor > .cm-scroller > .cm-sizer {
     .image-embed:not([width]),
     .image-embed:not([width]) > .image-wrapper,
     iframe,
