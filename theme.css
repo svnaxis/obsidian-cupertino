@@ -17,6 +17,7 @@ body,
   --titlebar-text-weight: var(--font-medium);
   --translucent-light-opacity: 50%;
   --translucent-dark-opacity: 50%;
+  --blur-modifier: 1;
   --blur-brightness: 1;
   --blur-saturation: 1.5;
   --blur-radius-s: 8px;
@@ -3213,20 +3214,20 @@ body:not(.is-android:not(.adaptive-mode-off)) .setting-item[data-id=material-col
   body:not(.media-width-fit) .markdown-preview-sizer iframe,
   body:not(.media-width-fit) .markdown-preview-sizer video,
   body:not(.media-width-fit) .markdown-preview-sizer img:not([width], .link-favicon, .emoji, .highlight-swatch, [alt=banner]),
-  body:not(.media-width-fit) .cm-content .image-embed:not([width]),
-  body:not(.media-width-fit) .cm-content .image-embed:not([width]) > .image-wrapper,
-  body:not(.media-width-fit) .cm-content iframe,
-  body:not(.media-width-fit) .cm-content video,
-  body:not(.media-width-fit) .cm-content img:not([width], .link-favicon, .emoji, .highlight-swatch, [alt=banner]) {
+  body:not(.media-width-fit) .cm-editor > .cm-scroller > .cm-sizer .image-embed:not([width]),
+  body:not(.media-width-fit) .cm-editor > .cm-scroller > .cm-sizer .image-embed:not([width]) > .image-wrapper,
+  body:not(.media-width-fit) .cm-editor > .cm-scroller > .cm-sizer iframe,
+  body:not(.media-width-fit) .cm-editor > .cm-scroller > .cm-sizer video,
+  body:not(.media-width-fit) .cm-editor > .cm-scroller > .cm-sizer img:not([width], .link-favicon, .emoji, .highlight-swatch, [alt=banner]) {
     width: 100%;
     padding: 0;
   }
   body:not(.media-width-fit) .markdown-preview-sizer iframe,
   body:not(.media-width-fit) .markdown-preview-sizer video,
   body:not(.media-width-fit) .markdown-preview-sizer img:not([width], .link-favicon, .emoji, .highlight-swatch, [alt=banner]),
-  body:not(.media-width-fit) .cm-content iframe,
-  body:not(.media-width-fit) .cm-content video,
-  body:not(.media-width-fit) .cm-content img:not([width], .link-favicon, .emoji, .highlight-swatch, [alt=banner]) {
+  body:not(.media-width-fit) .cm-editor > .cm-scroller > .cm-sizer iframe,
+  body:not(.media-width-fit) .cm-editor > .cm-scroller > .cm-sizer video,
+  body:not(.media-width-fit) .cm-editor > .cm-scroller > .cm-sizer img:not([width], .link-favicon, .emoji, .highlight-swatch, [alt=banner]) {
     background: var(--background-primary-alt);
     max-height: 75vh;
     object-fit: contain;
